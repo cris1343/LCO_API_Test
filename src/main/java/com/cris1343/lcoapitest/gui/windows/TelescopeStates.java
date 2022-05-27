@@ -64,6 +64,8 @@ public class TelescopeStates extends Interface {
         DefaultMutableTreeNode ogg = new DefaultMutableTreeNode("Haleakala Observatory - Maui, USA");
         telescopes.add(ogg);
 
+        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+
         //LOAD TELESCOPE STATES FROM LCO
         Executors.newSingleThreadExecutor().submit(() -> {
             JSONObject json = Http.get("https://observe.lco.global/api/telescope_states/");
@@ -101,6 +103,8 @@ public class TelescopeStates extends Interface {
             setTitle("Telescope States");
             tree.expandPath(new TreePath(telescopes.getPath()));
             tree.updateUI();
+
+            setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
         });
     }
 }
