@@ -57,7 +57,7 @@ public class MainMenu extends Interface {
             config.add(separator, Utility.gBCBuilder().pos(0, 3).fill(GridBagConstraints.HORIZONTAL).build());
 
             //VERSION
-            JLabel version = new JLabel("v1.0-beta1");
+            JLabel version = new JLabel("v1.0-beta2");
             config.add(version, Utility.gBCBuilder().pos(0, 4).build());
 
             add(config, Utility.gBCBuilder().pos(0, 0).build());
